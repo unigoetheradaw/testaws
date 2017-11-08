@@ -5,3 +5,7 @@ print("foo bar")
 =======
 lorem ipsum
 >>>>>>> refs/remotes/origin/master
+
+h = 1
+
+Trolololo
