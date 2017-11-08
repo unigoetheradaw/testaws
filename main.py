@@ -3,5 +3,5 @@
 print("foo bar")
 #trololol
 =======
-afsefsefse
+lorem ipsum
 >>>>>>> refs/remotes/origin/master
