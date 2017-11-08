@@ -1,23 +1,21 @@
 ## This is the main file
-print("Hello")
 
-h = 1
-<<<<<<< HEAD
-print("foo bar")
-#trololol
-=======
-lorem ipsum
->>>>>>> refs/remotes/origin/master
+import os
+import time
+ 
+def clearscreen():
+    os.system('cls' if os.name=='nt' else 'clear')
+    
+def welcome():
+    print("==============16 ist tot==============")
+    print("|.............:Willkommen:...........|")
+    print("|....................................|")
+    print("|.Press (1)..Menue...................|")
+    print("|.Press (2)..Auto-Game...............|")
+    print("|.Press (3)..Exit....................|")
+    print("======================================")
 
-h1
+welcome()
+time.sleep(3)
 
-h = 1
-
-Trolololo
-
-hahd
-hah
-
-ja das tut es
-
-git Hub
+clearscreen()
