@@ -1,4 +1,7 @@
 ## This is the main file
+print("Hello")
+
+h = 1
 <<<<<<< HEAD
 print("foo bar")
 #trololol
