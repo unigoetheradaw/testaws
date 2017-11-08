@@ -10,3 +10,9 @@ lorem ipsum
 >>>>>>> refs/remotes/origin/master
 
 h1
+
+h = 1
+
+Trolololo
+
+git Hub
