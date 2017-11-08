@@ -8,3 +8,5 @@ print("foo bar")
 =======
 lorem ipsum
 >>>>>>> refs/remotes/origin/master
+
+h1
