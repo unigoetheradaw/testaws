@@ -12,11 +12,12 @@ def welcome():
     print("|....................................|")
     print("|.Press (1)..Menue...................|")
     print("|.Press (2)..Auto-Game...............|")
-    print("|.Press (4)..Help....................|")
-    print("|.Press (3)..Exit....................|")
+    print("|.Press (3)..Help....................|")
+    print("|.Press (4)..Exit....................|")
     print("======================================")
 
 welcome()
+
 time.sleep(3)
  
 clearscreen()
