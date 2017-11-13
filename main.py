@@ -5,8 +5,6 @@ import os
 import time
 import random
 from player import Player
-from comparator import Comparator
-
 
 
 def clearscreen():
@@ -45,17 +43,18 @@ def configure_game():
     for i in range(num_players):
         name_player = input("Name of Player")
         obj_list.append(Player(name_player, i))
-        #P1 = Player(name, 0, 0, 0)
+        # P1 = Player(name, 0, 0, 0)
     
     listprinting(obj_list)
     
     role_dice()
 
+
 def sumeplayers():
-    p1 = Player("otto",0,4,4)
-    p2 = Player("thorsten",1,512,4)
-    p3 = Player("penis",2,0,4)
-    p4 = Player("potato",3,9,4)
+    p1 = Player("otto", 0, 4, 4)
+    p2 = Player("thorsten", 1, 512, 4)
+    p3 = Player("penis", 2, 0, 4)
+    p4 = Player("potato", 3, 9, 4)
     liste = []
     liste.append(p1)
     liste.append(p2)
@@ -63,8 +62,9 @@ def sumeplayers():
     liste.append(p4)
     listprinting(liste)
     print("----------------")
-    liste.sort(key = lambda x: x.score)
+    liste.sort(key=lambda x: x.score)
     listprinting(liste)
+
     
 def auto_game():
     return(role_dice())
@@ -72,6 +72,7 @@ def auto_game():
     
 def help():
     potato
+
 
 def listprinting(obj_list):
     i = 0
