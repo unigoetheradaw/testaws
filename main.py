@@ -70,7 +70,6 @@ def somefunc():
             break
 
 
-#sddfsd
 somefunc()
 
 # clearscreen()
