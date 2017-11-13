@@ -14,3 +14,6 @@ class Player(object):
     
     def getscore(self):
         return (Self.score)
+    
+    def compare(self, other):
+       return self.score - other.score

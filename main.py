@@ -5,6 +5,7 @@ import os
 import time
 import random
 from player import Player
+from comparator import Comparator
 
 
 
@@ -36,19 +37,34 @@ def role_dice(number=1, faces=6, seed=None):
 
 
 def configure_game():
-    liste = []
+    obj_list = []
     print("Category choose: Configure your Game")
     print("Enter number of Players")
     num_players = int(input())  # generate player objects
     
     for i in range(num_players):
         name_player = input("Name of Player")
-        liste.append(Player(name_player, i))
+        obj_list.append(Player(name_player, i))
         #P1 = Player(name, 0, 0, 0)
     
-    print(liste[0].name)
+    listprinting(obj_list)
+    
     role_dice()
 
+def sumeplayers():
+    p1 = Player("otto",0,4,4)
+    p2 = Player("thorsten",1,512,4)
+    p3 = Player("penis",2,0,4)
+    p4 = Player("potato",3,9,4)
+    liste = []
+    liste.append(p1)
+    liste.append(p2)
+    liste.append(p3)
+    liste.append(p4)
+    listprinting(liste)
+    print("----------------")
+    liste.sort(key = lambda x: x.score)
+    listprinting(liste)
     
 def auto_game():
     return(role_dice())
@@ -57,8 +73,15 @@ def auto_game():
 def help():
     potato
 
+def listprinting(obj_list):
+    i = 0
+    while i < len(obj_list):
+        print(obj_list[i].name, "score:", obj_list[i].score)
+        i += 1
+
 
 def somefunc():
+    sumeplayers()
     welcome()
     seed = 5
     while(True):
