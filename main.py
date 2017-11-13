@@ -65,6 +65,10 @@ def somefunc():
              configure_game()
         if (a == "2"):
             print(auto_game())
+        if (a == "3"):
+            print("You are lost. Help yourself")
+            break
+
 
 
 somefunc()
