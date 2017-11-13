@@ -1,8 +1,11 @@
+
 # # This is the main file
 """Das ist ein DocString"""
 import os
 import time
 import random
+from player import Player
+
 
 
 def clearscreen():
@@ -16,33 +19,35 @@ def welcome():
     print("|.Press (1)..Configure your Game.....|")
     print("|.Press (2)..Auto-Game...............|")
     print("|.Press (3)..Help....................|")
-    print("|.Press (4)..Exit....................|")
+    print("|.Press (4)..Admin View..............|")
+    print("|.Press (5)..Exit....................|")
     print("======================================")
 
 
 def role_dice(number=1, faces=6, seed=None):
-    print("LOLOLOL Seed:", seed)
-    random.seed(seed)
-    c = random.randint(1, faces)
-    random.seed(seed)
-    b = random.randint(1, faces)
+    # number zeug machen
+    """
+    sdfgdfgfg
+    
+    """
     random.seed(seed)
     a = random.randint(1, faces)
-    return (a, b, c)
+    return (a)
 
 
 def configure_game():
+    liste = []
     print("Category choose: Configure your Game")
     print("Enter number of Players")
-    players_number = int(input())  # generate player objects
-    print("Enter number of Dices")
-    dices_number = int(input())  # catch errors
-    print("Enter number of Faces of Dices")
-    faces_number = int(input())  # catch_errors
-    print("Do you want to set a seed (y/n)")
-    # perhaps override seed in role_dice
-    seed = input()
-    role_dice(dices_number, faces_number, seed)
+    num_players = int(input())  # generate player objects
+    
+    for i in range(num_players):
+        name_player = input("Name of Player")
+        liste.append(Player(name_player, i))
+        #P1 = Player(name, 0, 0, 0)
+    
+    print(liste[0].name)
+    role_dice()
 
     
 def auto_game():
