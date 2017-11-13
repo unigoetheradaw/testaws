@@ -8,7 +8,7 @@ from player import Player
 
 
 def clearscreen():
-  os.system('cls' if os.name == 'nt' else 'clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
   
 def welcome():
@@ -22,48 +22,24 @@ def welcome():
     print("|.Press (5)..Exit....................|")
     print("======================================")
 
-
-def role_dice(number=1, faces=6, seed=None):
-    # number zeug machen
-    """
-    sdfgdfgfg
     
-    """
+def role_dice(number=1, faces=6, seed=None):
     random.seed(seed)
-    a = random.randint(1, faces)
-    return (a)
+    pips = random.randint(1, faces)
+    return (pips)
 
 
 def configure_game():
-    obj_list = []
-    print("Category choose: Configure your Game")
+    players = []
+    print("Category choosen: Configure your Game")
     print("Enter number of Players")
     num_players = int(input())  # generate player objects
     
     for i in range(num_players):
-        name_player = input("Name of Player")
-        obj_list.append(Player(name_player, i))
-        # P1 = Player(name, 0, 0, 0)
-    
-    listprinting(obj_list)
-    
-    role_dice()
-
-
-def sumeplayers():
-    p1 = Player("otto", 0, 4, 4)
-    p2 = Player("thorsten", 1, 512, 4)
-    p3 = Player("penis", 2, 0, 4)
-    p4 = Player("potato", 3, 9, 4)
-    liste = []
-    liste.append(p1)
-    liste.append(p2)
-    liste.append(p3)
-    liste.append(p4)
-    listprinting(liste)
-    print("----------------")
-    liste.sort(key=lambda x: x.score)
-    listprinting(liste)
+        name_player = input("Name of Player: ")
+        players.append(Player(name_player, i))
+        
+    sixteen_is_dead(players)
 
     
 def auto_game():
@@ -81,8 +57,33 @@ def listprinting(obj_list):
         i += 1
 
 
+def sixteen_is_dead(players):
+    print("Press \<enter> to role dice. \<n> for next Player")
+    for player in players:
+        print("Your turn", player.name)
+        while(True):
+            input_str = input()
+            if (input_str == ""):
+                
+                if (player.score == 9):
+                                 
+                elif (player.score == 10): 
+                                     
+                elif (16 <= player.score):
+                  
+                    
+            if (input_str == "n"):
+                break
+            
+    if (len(players) == 0):
+        print("No Winner. Enjoy another round or a pint")
+    else:
+        players.sort(key=lambda x: x.score)        
+        listprinting(players)
+
+
 def somefunc():
-    sumeplayers()
+    # sumeplayers()
     welcome()
     seed = 5
     while(True):
