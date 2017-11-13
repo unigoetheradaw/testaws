@@ -1,5 +1,5 @@
 
-# # This is the main file
+# # This is Sparta
 """Das ist ein DocString"""
 import os
 import time
