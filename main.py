@@ -48,6 +48,7 @@ def auto_game():
 
     
 def help():
+    print("Help is coming, please hold.")
     #potato
 
 
