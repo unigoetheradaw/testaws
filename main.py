@@ -66,25 +66,25 @@ def sixteen_is_dead(players):
         while(True):
             input_str = input()
             if (input_str == ""):
-                
+                pips = role_dice()
+                player.score += pips
+                print("Dice was:", pips, "New Player score is", player.score)
                 if (player.score == 9):
                     #break and next player
+                    print("You loose, due to 9")
+                    player.score = -1
                     break
                 elif (player.score == 10):
                     #wait three seconds and roll again.
-                    role_dice(1)
+                    print("Force role, because of 10")
+                    player.score += role_dice()
                 elif (16 <= player.score):
                     #break and next player
+                    print("You loose, due to 16 or higher")
                     break
                     
             if (input_str == "n"):
                 break
-            
-    if (len(players) == 0):
-        print("No Winner. Enjoy another round or a pint")
-    else:
-        players.sort(key=lambda x: x.score)        
-        listprinting(players)
 
 
 def somefunc():
