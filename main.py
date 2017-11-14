@@ -12,6 +12,7 @@ def clearscreen():
 
   
 def welcome():
+    '''welcome function'''
     print("==============16 ist tot==============")
     print("|.............:Willkommen:...........|")
     print("|....................................|")
@@ -47,7 +48,7 @@ def auto_game():
 
     
 def help():
-    potato
+    #potato
 
 
 def listprinting(obj_list):
@@ -66,11 +67,14 @@ def sixteen_is_dead(players):
             if (input_str == ""):
                 
                 if (player.score == 9):
-                                 
-                elif (player.score == 10): 
-                                     
+                    #break and next player
+                    break
+                elif (player.score == 10):
+                    #wait three seconds and roll again.
+                    role_dice(1)
                 elif (16 <= player.score):
-                  
+                    #break and next player
+                    break
                     
             if (input_str == "n"):
                 break
@@ -103,3 +107,4 @@ def somefunc():
 somefunc()
 
 # clearscreen()
+
