@@ -1,19 +1,18 @@
 
-# # This is the main file
+# # This is Sparta
 """Das ist ein DocString"""
 import os
 import time
 import random
 from player import Player
-from comparator import Comparator
-
 
 
 def clearscreen():
-  os.system('cls' if os.name == 'nt' else 'clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
 
   
 def welcome():
+    '''welcome function'''
     print("==============16 ist tot==============")
     print("|.............:Willkommen:...........|")
     print("|....................................|")
@@ -24,54 +23,34 @@ def welcome():
     print("|.Press (5)..Exit....................|")
     print("======================================")
 
-
-def role_dice(number=1, faces=6, seed=None):
-    # number zeug machen
-    """
-    sdfgdfgfg
     
-    """
+def role_dice(number=1, faces=6, seed=None):
     random.seed(seed)
-    a = random.randint(1, faces)
-    return (a)
+    pips = random.randint(1, faces)
+    return (pips)
 
 
 def configure_game():
-    obj_list = []
-    print("Category choose: Configure your Game")
+    players = []
+    print("Category choosen: Configure your Game")
     print("Enter number of Players")
     num_players = int(input())  # generate player objects
     
     for i in range(num_players):
-        name_player = input("Name of Player")
-        obj_list.append(Player(name_player, i))
-        #P1 = Player(name, 0, 0, 0)
-    
-    listprinting(obj_list)
-    
-    role_dice()
+        name_player = input("Name of Player: ")
+        players.append(Player(name_player, i))
+        
+    sixteen_is_dead(players)
 
-def sumeplayers():
-    p1 = Player("otto",0,4,4)
-    p2 = Player("thorsten",1,512,4)
-    p3 = Player("penis",2,0,4)
-    p4 = Player("potato",3,9,4)
-    liste = []
-    liste.append(p1)
-    liste.append(p2)
-    liste.append(p3)
-    liste.append(p4)
-    listprinting(liste)
-    print("----------------")
-    liste.sort(key = lambda x: x.score)
-    listprinting(liste)
     
 def auto_game():
     return(role_dice())
 
     
 def help():
-    potato
+    print("Help is coming, please hold.")
+    #potato
+
 
 def listprinting(obj_list):
     i = 0
@@ -80,8 +59,36 @@ def listprinting(obj_list):
         i += 1
 
 
+def sixteen_is_dead(players):
+    print("Press \<enter> to role dice. \<n> for next Player")
+    for player in players:
+        print("Your turn", player.name)
+        while(True):
+            input_str = input()
+            if (input_str == ""):
+                pips = role_dice()
+                player.score += pips
+                print("Dice was:", pips, "New Player score is", player.score)
+                if (player.score == 9):
+                    #break and next player
+                    print("You loose, due to 9")
+                    player.score = -1
+                    break
+                elif (player.score == 10):
+                    #wait three seconds and roll again.
+                    print("Force role, because of 10")
+                    player.score += role_dice()
+                elif (16 <= player.score):
+                    #break and next player
+                    print("You loose, due to 16 or higher")
+                    break
+                    
+            if (input_str == "n"):
+                break
+
+
 def somefunc():
-    sumeplayers()
+    # sumeplayers()
     welcome()
     seed = 5
     while(True):
@@ -101,3 +108,4 @@ def somefunc():
 somefunc()
 
 # clearscreen()
+

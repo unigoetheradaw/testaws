@@ -14,3 +14,5 @@ To do:
 Spieler Objekte von Klasse Player?
 
 key = ord(getch())
+
+Test für GitHub
